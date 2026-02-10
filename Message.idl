@@ -1,0 +1,7 @@
+module Chat {
+  @topic
+  struct Message {
+    long sender_id; // Identificador único del emisor
+    string text; // El contenido del mensaje en formato de texto
+  };
+};

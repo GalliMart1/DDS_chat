@@ -1,0 +1,6 @@
+project: dcps {
+  libs += OpenDDS_Dcps
+  after += OpenDDS_Dcps
+}
+
+

@@ -1,0 +1,15 @@
+project(*idl): dcps {
+  // Aquí usamos la herencia directa de dcps
+  TypeSupport_Files {
+    Message.idl
+  }
+}
+
+project(*Node): dcpsexe {
+  after += *idl
+  exename   = chat_node
+  source_files {
+    Node.cpp
+    MessageTypeSupportImpl.cpp
+  }
+}

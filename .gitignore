@@ -1,0 +1,33 @@
+# --- Binarios y Ejecutables ---
+Node
+chat_node
+*.exe
+*.obj/
+.obj/
+
+# --- Archivos generados por OpenDDS (IDL Compiler) ---
+*C.cpp
+*C.h
+*C.inl
+*S.cpp
+*S.h
+*TypeSupport.idl
+*TypeSupportC.cpp
+*TypeSupportC.h
+*TypeSupportC.inl
+*TypeSupportS.cpp
+*TypeSupportS.h
+*TypeSupportImpl.cpp
+*TypeSupportImpl.h
+
+# --- Archivos de compilación local (Makefiles/Dependencias) ---
+GNUmakefile*
+*.depend.*
+*.so
+*.a
+*.lib
+*.dll
+
+# --- Archivos temporales de Editores/VS Code ---
+.vscode/
+.DS_Store
