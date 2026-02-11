@@ -12,39 +12,40 @@ source ~/OpenDDS/setenv.sh
 ### Compilación
   Sigue estos pasos para generar los binarios y archivos de soporte desde cero:
 
-#### 1. Navegar al directorio del proyecto:
-``` bash
-cd dds_chat
-```
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/GalliMart1/dds_chat.git](https://github.com/GalliMart1/dds_chat.git)
+   cd dds_chat
+   ```
 
-#### 2. Generar el Makefile: 
-  Utilizamos MPC (Make Project Creator) para generar los archivos de compilación basados en el workspace y el tipo de sistema (GNU Make).
-``` bash
-$ACE_ROOT/bin/mwc.pl -type gnuace
-```
+2. **Generar el Makefile:**
+      Utilizamos MPC (Make Project Creator) para generar los archivos de compilación basados en el workspace y el tipo de sistema (GNU Make).
+    ``` bash
+    $ACE_ROOT/bin/mwc.pl -type gnuace
+    ```
 
-#### 3. Compilar:
-``` bash
-make
-```
-Esto generará el código base del IDL y un ejecutable principal llamado chat_node.
+3. **Compilar:**
+    ``` bash
+    make
+    ```
+    Esto generará el código base del IDL y un ejecutable principal llamado chat_node.
 
 ### Ejecución
   Para probar la comunicación, necesitas simular al menos dos nodos (pueden ser dos terminales en la misma PC o dos PCs diferentes en la misma red LAN).
 
 #### Paso 1: Configuración de Red.
-  El proyecto utiliza el archivo rtps.ini para la configuración de descubrimiento e interoperabilidad. Asegúrate de que este archivo esté en la misma carpeta que el ejecutable.
-
-#### Paso 2: Iniciar Nodos
+ El proyecto utiliza el archivo rtps.ini para la configuración de descubrimiento e interoperabilidad. Asegúrate de que este archivo esté en la misma carpeta que el ejecutable.
+  
+#### Paso 2: Iniciar Nodos.
 Terminal 1 (Usuario A):
-``` bash
+  ``` bash
 ./chat_node -DCPSConfigFile rtps.ini
 ```
 Terminal 2 (Usuario B):
-``` bash
-./chat_node -DCPSConfigFile rtps.ini
+  ``` bash
+ ./chat_node -DCPSConfigFile rtps.ini
 ```
-Nota: Al arrancar, el protocolo RTPS iniciará el handshake automático para descubrir otros participantes en el dominio.
+  Nota: Al arrancar, el protocolo RTPS iniciará el handshake automático para descubrir otros participantes en el dominio.
 
 ### Uso
   El programa funciona simultáneamente como Publicador (DataWriter) y Suscriptor (DataReader).
@@ -59,4 +60,5 @@ Nota: Al arrancar, el protocolo RTPS iniciará el handshake automático para des
 - **workspace.mwc / chat.mpc:** Archivos de definición del proyecto para el sistema de compilación MPC.
 
  
+
 
