@@ -14,13 +14,13 @@ source ~/OpenDDS/setenv.sh
 
 #### 1. Navegar al directorio del proyecto:
 ``` bash
-cd /mnt/c/dds_chat
+cd dds_chat
 ```
 
 #### 2. Generar el Makefile: 
   Utilizamos MPC (Make Project Creator) para generar los archivos de compilación basados en el workspace y el tipo de sistema (GNU Make).
 ``` bash
-mwc.pl -type gnuace workspace.mwc
+$ACE_ROOT/bin/mwc.pl -type gnuace
 ```
 
 #### 3. Compilar:
@@ -59,3 +59,4 @@ Nota: Al arrancar, el protocolo RTPS iniciará el handshake automático para des
 - **workspace.mwc / chat.mpc:** Archivos de definición del proyecto para el sistema de compilación MPC.
 
  
+
